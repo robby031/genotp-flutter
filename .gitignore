@@ -34,5 +34,6 @@ migrate_working_dir/
 
 # Compiled gomobile artifacts — rebuild via genotp-mobile Go repo: make build-android / make build-ios
 android/libs/*.aar
-ios/Frameworks/*.xcframework
-ios/Frameworks/*.framework
+ios/Frameworks/
+ios/genotp_flutter/*.xcframework
+ios/genotp_flutter/*.framework

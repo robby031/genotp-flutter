@@ -14,7 +14,7 @@ Flutter plugin for genotp-go OTP library via gomobile
   s.author           = { 'Your Company' => 'email@example.com' }
   s.source           = { :path => '.' }
   s.source_files = 'genotp_flutter/Sources/genotp_flutter/**/*'
-  s.vendored_frameworks = 'Frameworks/Genotp.xcframework'
+  s.vendored_frameworks = 'genotp_flutter/Genotp.xcframework'
   s.dependency 'Flutter'
   s.platform = :ios, '13.0'
 

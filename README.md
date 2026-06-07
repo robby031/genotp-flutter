@@ -16,7 +16,7 @@ no network call required.
 
 ```yaml
 dependencies:
-  genotp_flutter: ^0.0.3
+  genotp_flutter: ^0.0.4
 ```
 
 ## Usage
@@ -155,11 +155,11 @@ try {
 ```
 Flutter (Dart)
     |  MethodChannel
-Android (Kotlin)          iOS (Swift)
-    |  mobile.Mobile.*        |  MobileNewTotpHandle()
-genotp.aar                Genotp.xcframework
-    |                         |
-    +--- genotp-go (Go) ------+
+Android (Kotlin)              iOS (Swift)
+    |  mobile.Mobile.*            |  MobileNewTotpHandle()
+genotp.jar + libgojni.so      Genotp.xcframework
+    |                             |
+    +------ genotp-go (Go) -------+
 ```
 
 The native binary is compiled from
@@ -167,3 +167,10 @@ The native binary is compiled from
 [gomobile bind](https://pkg.go.dev/golang.org/x/mobile/cmd/gomobile).
 To rebuild the native artifacts after updating genotp-go, see the
 [genotp-mobile](https://github.com/robby031/genotp-mobile) repository.
+
+To sync the Flutter plugin with a released
+[genotp-mobile](https://github.com/robby031/genotp-mobile) version:
+
+```bash
+./tool/sync_mobile_artifacts.sh v1.2.3
+```

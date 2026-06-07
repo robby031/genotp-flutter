@@ -35,17 +35,19 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
+    defaultConfig {
+        minSdk = 24
+        consumerProguardFiles("consumer-rules.pro")
+    }
+
     sourceSets {
         getByName("main") {
             java.srcDirs("src/main/kotlin")
+            jniLibs.srcDirs("src/main/jniLibs")
         }
         getByName("test") {
             java.srcDirs("src/test/kotlin")
         }
-    }
-
-    defaultConfig {
-        minSdk = 24
     }
 
     testOptions {
@@ -72,7 +74,7 @@ kotlin {
 }
 
 dependencies {
-    implementation(files("libs/genotp.aar"))
+    implementation(files("libs/genotp.jar"))
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     testImplementation("org.mockito:mockito-core:5.0.0")
 }

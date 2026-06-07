@@ -1,3 +1,8 @@
+## 0.0.4
+
+- Fix Android release builds on modern AGP by packaging the native Android binding as `genotp.jar` plus `jniLibs`, instead of a direct local `.aar` dependency
+- Add `tool/sync_mobile_artifacts.sh` to pull versioned native artifacts from `genotp-mobile` releases
+
 ## 0.0.3
 
 - Add `otpauth-migration://` build/parse APIs for Google Authenticator multi-account QR flows

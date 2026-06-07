@@ -45,6 +45,29 @@ mkdir -p "$ROOT_DIR/ios/genotp_flutter"
 unzip -oq "$TMP_DIR/Genotp.xcframework.zip" -d "$TMP_DIR/ios"
 cp -R "$TMP_DIR/ios/Genotp.xcframework" "$ROOT_DIR/ios/genotp_flutter/Genotp.xcframework"
 
+python3 - <<PY
+from pathlib import Path
+import re
+
+root = Path(r"$ROOT_DIR")
+version = "$VERSION"
+checksum = None
+for line in (Path(r"$TMP_DIR") / "SHA256SUMS").read_text().splitlines():
+    digest, name = line.split("  ", 1)
+    if name == "Genotp.xcframework.zip":
+        checksum = digest
+        break
+
+if not checksum:
+    raise SystemExit("missing Genotp.xcframework.zip checksum")
+
+package_swift = root / "ios/genotp_flutter/Package.swift"
+content = package_swift.read_text()
+content = re.sub(r'let genotpMobileVersion = ".*"', f'let genotpMobileVersion = "{version}"', content)
+content = re.sub(r'let genotpXCFrameworkChecksum = ".*"', f'let genotpXCFrameworkChecksum = "{checksum}"', content)
+package_swift.write_text(content)
+PY
+
 printf '%s\n' "$VERSION" > "$VERSION_FILE"
 
 echo "Synchronized genotp-mobile artifacts ${VERSION}"

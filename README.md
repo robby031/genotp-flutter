@@ -16,7 +16,7 @@ no network call required.
 
 ```yaml
 dependencies:
-  genotp_flutter: ^0.0.1
+  genotp_flutter: ^0.0.3
 ```
 
 ## Usage

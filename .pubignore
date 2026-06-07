@@ -1,1 +1,6 @@
-example/
+build/
+.dart_tool/
+.idea/
+*.iml
+example/.dart_tool/
+example/build/

@@ -44,7 +44,7 @@ jobs:
         run: dart pub publish --dry-run
 
   build-android-example:
-    name: Build Android example
+    name: Verify Android plugin
     runs-on: ubuntu-latest
 
     steps:
@@ -68,9 +68,9 @@ jobs:
         working-directory: example
         run: flutter pub get
 
-      - name: Build Android release APK
-        working-directory: example
-        run: flutter build apk --release
+      - name: Bundle plugin release AAR
+        working-directory: example/android
+        run: ./gradlew :genotp_flutter:bundleReleaseAar
 
   build-ios-example:
     name: Build iOS example

@@ -1,3 +1,7 @@
+## 0.0.5
+
+- Fix Android plugin compilation by applying the Kotlin Android plugin so `GenotpFlutterPlugin` is available in consumer release builds
+
 ## 0.0.4
 
 - Fix Android release builds on modern AGP by packaging the native Android binding as `genotp.jar` plus `jniLibs`, instead of a direct local `.aar` dependency

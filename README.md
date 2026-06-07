@@ -16,7 +16,7 @@ no network call required.
 
 ```yaml
 dependencies:
-  genotp_flutter: ^0.0.4
+  genotp_flutter: ^0.0.5
 ```
 
 ## Usage
@@ -182,5 +182,5 @@ GitHub Actions verifies this plugin on every push to `main` and every pull reque
 - `flutter analyze`
 - `flutter test`
 - `dart pub publish --dry-run`
-- `flutter build apk --release` in `example/`
+- `:genotp_flutter:bundleReleaseAar` in `example/android`
 - `flutter build ios --release --no-codesign` in `example/`

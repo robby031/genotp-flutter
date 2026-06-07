@@ -1,3 +1,8 @@
+## 0.0.3
+
+- Add `otpauth-migration://` build/parse APIs for Google Authenticator multi-account QR flows
+- Expose typed Dart models for migration payloads and accounts
+
 ## 0.0.2
 
 - Fix iOS build: xcframework now properly included under `ios/genotp_flutter/` for Flutter SPM support

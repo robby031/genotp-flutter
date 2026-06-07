@@ -87,6 +87,28 @@ public class GenotpFlutterPlugin: NSObject, FlutterPlugin {
             )
             result(uri)
 
+        case "buildOtpAuthMigrationUri":
+            let args = call.arguments as! [String: Any]
+            let uri = MobileBuildOtpAuthMigrationUri(
+                args["accountsJson"] as! String,
+                args["version"] as? Int ?? 1,
+                args["batchSize"] as? Int ?? 1,
+                args["batchIndex"] as? Int ?? 0,
+                args["batchId"] as? Int ?? 0,
+                &err
+            )
+            guard err == nil else { return fail(result, err!) }
+            result(uri)
+
+        case "parseOtpAuthMigrationUri":
+            let args = call.arguments as! [String: Any]
+            let json = MobileParseOtpAuthMigrationUri(
+                args["uri"] as! String,
+                &err
+            )
+            guard err == nil else { return fail(result, err!) }
+            result(json)
+
         default:
             result(FlutterMethodNotImplemented)
         }

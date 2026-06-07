@@ -103,4 +103,32 @@ class MethodChannelGenotpFlutter extends GenotpFlutterPlatform {
         }) ??
         '';
   }
+
+  @override
+  Future<String> buildOtpAuthMigrationUri({
+    required String accountsJson,
+    int version = 1,
+    int batchSize = 1,
+    int batchIndex = 0,
+    int batchId = 0,
+  }) async {
+    return await methodChannel
+            .invokeMethod<String>('buildOtpAuthMigrationUri', {
+              'accountsJson': accountsJson,
+              'version': version,
+              'batchSize': batchSize,
+              'batchIndex': batchIndex,
+              'batchId': batchId,
+            }) ??
+        '';
+  }
+
+  @override
+  Future<String> parseOtpAuthMigrationUri({required String uri}) async {
+    return await methodChannel.invokeMethod<String>(
+          'parseOtpAuthMigrationUri',
+          {'uri': uri},
+        ) ??
+        '';
+  }
 }

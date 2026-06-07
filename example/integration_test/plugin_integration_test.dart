@@ -14,11 +14,10 @@ import 'package:genotp_flutter/genotp_flutter.dart';
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-  testWidgets('getPlatformVersion test', (WidgetTester tester) async {
-    final GenotpFlutter plugin = GenotpFlutter();
-    final String? version = await plugin.getPlatformVersion();
-    // The version string depends on the host platform running the test, so
-    // just assert that some non-empty string is returned.
-    expect(version?.isNotEmpty, true);
+  testWidgets('generateSecret returns non-empty secret', (
+    WidgetTester tester,
+  ) async {
+    final secret = await GenotpFlutter.generateSecret();
+    expect(secret.isNotEmpty, true);
   });
 }

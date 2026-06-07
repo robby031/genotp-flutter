@@ -16,7 +16,7 @@ no network call required.
 
 ```yaml
 dependencies:
-  genotp_flutter: ^0.0.1
+  genotp_flutter: ^0.0.3
 ```
 
 ## Usage
@@ -80,6 +80,36 @@ final uri = await GenotpFlutter.buildTotpUri(
 
 Pass this URI to any QR code library to let users scan it into their
 authenticator app (Google Authenticator, Authy, etc.).
+
+### Build and parse `otpauth-migration://` URIs
+
+```dart
+final migrationUri = await GenotpFlutter.buildOtpAuthMigrationUri(
+  accounts: const [
+    OtpAuthMigrationAccount(
+      label: 'alice@example.com',
+      issuer: 'Example',
+      secretB32: 'JBSWY3DPEHPK3PXP',
+    ),
+    OtpAuthMigrationAccount(
+      label: 'ops@example.com',
+      issuer: 'Ops',
+      secretB32: 'MFRGGZDFMZTWQ2LK',
+      algorithm: 'SHA256',
+      digits: 8,
+      isHotp: true,
+      counter: 42,
+    ),
+  ],
+  version: 1,
+  batchSize: 2,
+  batchIndex: 0,
+  batchId: 123456,
+);
+
+final payload = await GenotpFlutter.parseOtpAuthMigrationUri(migrationUri);
+print(payload.accounts.length); // 2
+```
 
 ### HOTP
 

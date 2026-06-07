@@ -56,4 +56,14 @@ abstract class GenotpFlutterPlatform extends PlatformInterface {
     int digits = 6,
     int counter = 0,
   });
+
+  Future<String> buildOtpAuthMigrationUri({
+    required String accountsJson,
+    int version = 1,
+    int batchSize = 1,
+    int batchIndex = 0,
+    int batchId = 0,
+  });
+
+  Future<String> parseOtpAuthMigrationUri({required String uri});
 }

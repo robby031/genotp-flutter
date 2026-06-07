@@ -79,6 +79,28 @@ class GenotpFlutterPlugin : FlutterPlugin, MethodCallHandler {
                     result.success(Mobile.buildHotpUri(label, secretB32, issuer, algorithm, digits, counter))
                 }
 
+                "buildOtpAuthMigrationUri" -> {
+                    val accountsJson = call.argument<String>("accountsJson")!!
+                    val version = call.argument<Int>("version") ?: 1
+                    val batchSize = call.argument<Int>("batchSize") ?: 1
+                    val batchIndex = call.argument<Int>("batchIndex") ?: 0
+                    val batchId = call.argument<Int>("batchId") ?: 0
+                    result.success(
+                        Mobile.buildOtpAuthMigrationUri(
+                            accountsJson,
+                            version.toLong(),
+                            batchSize.toLong(),
+                            batchIndex.toLong(),
+                            batchId.toLong(),
+                        )
+                    )
+                }
+
+                "parseOtpAuthMigrationUri" -> {
+                    val uri = call.argument<String>("uri")!!
+                    result.success(Mobile.parseOtpAuthMigrationUri(uri))
+                }
+
                 else -> result.notImplemented()
             }
         } catch (e: Exception) {

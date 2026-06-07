@@ -1,3 +1,8 @@
+## 0.0.2
+
+- Fix iOS build: xcframework now properly included under `ios/genotp_flutter/` for Flutter SPM support
+- Fix Swift error bridging for gomobile-generated ObjC API
+
 ## 0.0.1
 
 Initial release.

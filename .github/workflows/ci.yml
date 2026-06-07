@@ -70,7 +70,9 @@ jobs:
 
       - name: Bundle plugin release AAR
         working-directory: example/android
-        run: ./gradlew :genotp_flutter:bundleReleaseAar
+        run: |
+          chmod +x gradlew
+          ./gradlew :genotp_flutter:bundleReleaseAar
 
   build-ios-example:
     name: Build iOS example

@@ -174,3 +174,13 @@ To sync the Flutter plugin with a released
 ```bash
 ./tool/sync_mobile_artifacts.sh v1.2.3
 ```
+
+## CI
+
+GitHub Actions verifies this plugin on every push to `main` and every pull request:
+
+- `flutter analyze`
+- `flutter test`
+- `dart pub publish --dry-run`
+- `flutter build apk --release` in `example/`
+- `flutter build ios --release --no-codesign` in `example/`

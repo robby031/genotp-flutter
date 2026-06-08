@@ -1,3 +1,10 @@
+## 0.0.6
+
+- Improve Android build compatibility by aligning the example project to Gradle 8.10.2 and AGP 8.7.3
+- Make Android AAR bundling more reliable in CI by setting up Android SDK and ensuring Gradle wrapper files/scripts are available before `:genotp_flutter:bundleReleaseAar`
+- Add Gradle wrapper scripts and wrapper JAR to `example/android` for reproducible local/CI builds
+- Bump package version to `0.0.6`
+
 ## 0.0.5
 
 - Fix Android plugin compilation by applying the Kotlin Android plugin so `GenotpFlutterPlugin` is available in consumer release builds

@@ -1,5 +1,6 @@
 plugins {
     id("com.android.library")
+    id("org.jetbrains.kotlin.android")
 }
 
 group = "com.robby031.genotp_flutter"
@@ -49,6 +50,12 @@ android {
                 }
             }
         }
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
     }
 }
 

@@ -1,6 +1,5 @@
 plugins {
     id("com.android.library")
-    id("org.jetbrains.kotlin.android")
 }
 
 group = "com.robby031.genotp_flutter"
@@ -28,11 +27,11 @@ android {
 
     sourceSets {
         getByName("main") {
-            java.srcDirs("src/main/kotlin")
+            kotlin.srcDirs("src/main/kotlin")
             jniLibs.srcDirs("src/main/jniLibs")
         }
         getByName("test") {
-            java.srcDirs("src/test/kotlin")
+            kotlin.srcDirs("src/test/kotlin")
         }
     }
 
@@ -50,12 +49,6 @@ android {
                 }
             }
         }
-    }
-}
-
-kotlin {
-    compilerOptions {
-        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
     }
 }
 

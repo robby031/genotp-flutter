@@ -1,3 +1,9 @@
+## 0.0.7
+
+- Stabilize Android Gradle configuration for CI with Flutter 3.44 by using a compatible AGP/Kotlin setup in `example/android`
+- Resolve `dev.flutter.flutter-gradle-plugin` startup crash during AGP 9 migration by reverting incompatible migration flags
+- Fix Kotlin/Java JVM target mismatch in the Android plugin module by aligning Kotlin compiler target to JVM 17
+
 ## 0.0.6
 
 - Improve Android build compatibility by aligning the example project to Gradle 8.10.2 and AGP 8.7.3

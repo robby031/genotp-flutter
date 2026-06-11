@@ -1,3 +1,8 @@
+## 0.0.8
+
+- Bump package version to `0.0.8`
+- Update native mobile artifacts to `genotp-mobile v1.2.4` for 16KB memory page compatibility
+
 ## 0.0.7
 
 - Stabilize Android Gradle configuration for CI with Flutter 3.44 by using a compatible AGP/Kotlin setup in `example/android`

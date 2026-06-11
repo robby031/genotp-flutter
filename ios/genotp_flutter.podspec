@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'genotp_flutter'
-  s.version          = '0.0.5'
+  s.version          = '0.0.8'
   s.summary          = 'Flutter plugin for genotp-go OTP library via gomobile'
   s.description      = <<-DESC
 Flutter plugin for genotp-go OTP library via gomobile

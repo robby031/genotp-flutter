@@ -16,7 +16,7 @@ no network call required.
 
 ```yaml
 dependencies:
-  genotp_flutter: ^0.0.7
+  genotp_flutter: ^0.0.8
 ```
 
 ## Usage
@@ -172,7 +172,7 @@ To sync the Flutter plugin with a released
 [genotp-mobile](https://github.com/robby031/genotp-mobile) version:
 
 ```bash
-./tool/sync_mobile_artifacts.sh v1.2.3
+./tool/sync_mobile_artifacts.sh v1.2.4
 ```
 
 ## CI

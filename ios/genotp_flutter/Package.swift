@@ -2,8 +2,8 @@
 
 import PackageDescription
 
-let genotpMobileVersion = "v1.2.3"
-let genotpXCFrameworkChecksum = "80ca03242fee424526519b238efc6ab2f03eca1c3e475c1145e9afff1b210f65"
+let genotpMobileVersion = "v1.2.4"
+let genotpXCFrameworkChecksum = "8fedb824be1f9a2b92cd306984e538c660e2b8e15d1adb9b5b60b12e5e371e34"
 
 let package = Package(
     name: "genotp_flutter",

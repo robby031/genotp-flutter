@@ -1,6 +1,6 @@
 name: genotp_flutter
 description: "TOTP/HOTP one-time password plugin for Flutter, powered by genotp-go via gomobile. Works on Android and iOS with no network dependency."
-version: 0.0.7
+version: 0.0.8
 homepage: https://github.com/robby031/genotp-flutter
 repository: https://github.com/robby031/genotp-flutter
 issue_tracker: https://github.com/robby031/genotp-flutter/issues
